@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: Poppins Regular, sans-serif;
+    text-align: center;
+    background-color: black;
+}
+
+.main.title {
+    color: #e1e1e1;
+    margin-top: 20px;
+    font-size: 5em;
+}
+
+.nav_link_list {
+    background-color: #282828;
+    padding: 2vw 2vh;
+    border-radius: 20vw;
+    margin: 20px auto;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.nav_link_list li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.nav_link_list a {
+    text-decoration: none;
+    color: #424242;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #282828;
+    transition: background-color 0.3s;
+}
+
+.nav_link_list a:hover {
+    color: #ffffff;
+}
