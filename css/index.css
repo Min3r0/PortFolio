@@ -9,6 +9,10 @@ body {
     background-color: black;
 }
 
+.div_main_title{
+    padding-top: 8vw;
+}
+
 .main_title {
     color: #e1e1e1;
     margin-top: 20px;
@@ -82,13 +86,23 @@ body {
     color: #3d3df3;
 }
 
-.experience_section {
+.experience_section_global {
+    padding-top: 6vw;
+
+}
+
+.experience_section_container {
     margin: 40px auto;
     max-width: 80%;
-    background-color: #282828;
+    background: linear-gradient(90deg, #000000 0%, #b980ff 100%);
+    padding: 3px; /* Ajustez pour l'épaisseur de la "bordure" */
+    border-radius: 20px; /* Plus large que la section intérieure pour compenser l'épaisseur */
+}
+
+.experience_section {
+    background: linear-gradient(66deg, #000000 55%, #9F80FF 100%);
     padding: 20px;
-    margin-top: 6vw;
-    border-radius: 15px;
+    border-radius: 20px
 }
 
 .experience_title {
