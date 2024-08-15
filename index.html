@@ -5,32 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romain AUGÉ</title>
     <link rel="stylesheet" href="css/index.css">
+
+    <link rel="icon" href="images/pp.png" type="image/x-icon">
+
 </head>
 <body>
-
+<div id="large-header" class="large-header">
+    <canvas id="demo-canvas"></canvas>
+</div>
 <ul class ="nav_link_list">
     <li class="about_nav_link">
-        <a href="#apropos">À propos</a>
+        <a href="#About_section" data-scroll>À propos</a>
     </li>
     <li class="xp_nav_link">
-        <a href="#experience">Expérience</a>
+        <a href="#experience_section" data-scroll>Expérience</a>
     </li>
-    <li class="etude_nav_link">
+    <li class="etude_nav_link" data-scroll>
         <a href="#etudes">Études</a>
     </li>
-    <li class="contact_nav_link">
+    <li class="contact_nav_link" data-scroll>
         <a href="#contact">Contact</a>
     </li>
 </ul>
-
-<h1 class="main title">
+<br id="About_section" ><br><br><br><br><br><br><br><br>
+<h1 class="main_title">
     Romain AUGÉ
 </h1>
+<h2 class="currently">
+    Je suis actuellement en 3ème année Data&IA a Toulouse Ynov Campus
+</h2>
+<img src="images/PhotoProfil.jpg" alt="Photo de profil de Romain AUGÉ" class="centered_image">
+
+
+<p class="about_me">
+    C'est au collège que ma passion pour l'informatique a véritablement pris forme. Les premières lignes de code en mathématiques et en technologie ont été les étincelles
+    qui ont allumé mon intérêt. Ces expériences m'ont rapidement mené vers des projets plus ambitieux, comme la conception d'un robot pour une compétition inter-établissements en troisième.<br>
+    Après avoir découvert les bases de la programmation au collège, j'ai souhaité approfondir mes compétences en intégrant l'option Informatique et Sciences du Numérique
+    au lycée Déodat de Séverac. Ce choix m'a conduit à obtenir un baccalauréat scientifique spécialité Sciences de l'Ingénieur avec une spécialisation en Sciences de l'Informatique
+    et du Numérique. Les deux années passées à la faculté Paul Sabatier m'ont permis de développer une approche rigoureuse de la programmation et de maîtriser différents langages et
+    outils informatiques.<br>
+    Parallèlement à mes études, j'ai eu la chance de m'investir pendant 15 ans au sein chez les Scouts et Guides de France, dans le groupe de Tournefeuille, dont 5 en tant que chef, cette expérience m'a permis de développer mes compétences
+    en prise de responsabilité, de renforcer ma confiance en moi et d'acquérir une autonomie de travail. De plus, mon obtention du BAFA, a renforcé mes compétences en animation et
+    gestion de groupe. Je suis passionné par les animaux, en particulier marins, ainsi que par les nouvelles technologies. J'admire également les innovations dans le domaine
+    des jeux vidéo et de l'automobile.<br>
+    Vous pouvez retrouver <a href="pdf/Romain_AUGE_CV.pdf" class="download_cv" download>mon CV ici</a>.
+    <br id="experience_section">
+</p>
+
+<section class="experience_section">
+    <h2 class="experience_title">Expérience professionnel 2eme année</h2>
+    <div class="experience_content">
+        <div class="experience_item">
+            <h3>L'Entreprise</h3>
+            <p class="experience_description">
+                J'ai effectué mon expérience professionnelle chez Agreenculture à Toulouse. Agreenculture est une entreprise française innovante créée en 2016 et installée à Toulouse. Elle est spécialisée dans les technologies agricoles de précision,
+                notamment dans la confection de solutions logicielles d'automatisation de machines agricoles sous forme de boîtiers blancs.<br>
+                L'ambition d'Agreenculture est d'automatiser des tâches agricoles à faible valeur ajoutée, comme le désherbage, tout en révolutionnant les pratiques agricoles.
+                L'entreprise développe des solutions robotiques autonomes pour l'agriculture, dont son produit phare : le robot agricole autonome Céol.<br>
+                Agreenculture se distingue par sa technologie de guidage GPS RTK haute précision. Ses solutions offrent de nombreux avantages, tels que la réduction des intrants,
+                l'optimisation du travail et le respect de l'environnement. L'entreprise cible divers marchés agricoles, notamment les grandes cultures, la viticulture et le maraîchage.<br>
+                L'innovation est au cœur de l'activité d'Agreenculture, avec une R&D focalisée sur la robotique et l'intelligence artificielle appliquées à l'agriculture. L'objectif est de combiner robotique,
+                données et expertise agronomique pour une agriculture plus durable et efficiente.<br>
+            </p>
+        </div>
+        <div class="experience_item">
+            <h3>L'Experience Profesionnel</h3>
+            <p class="experience_description" >
+                    J'ai effectué mon expérience professionnelle du 27 mars au 5 juillet, durant toutes les après-midi. Mon stage s'est déroulé en deux parties distinctes.<br>
+
+                En premier lieu, j'ai contribué à la conception de procédures d'assemblage et participé à l'assemblage de boîtiers GPS. J'ai également réalisé des tests afin de valider la mise sur le marché de ces boîtiers.
+                Malheureusement, je ne peux donner plus de détails sur cette partie en raison d'une clause de confidentialité que j'ai signée.<br>
+
+                La deuxième partie de mon stage a été consacrée au développement de tests logiciels. J'ai été chargé de coder des programmes de test destinés à être exécutés sur les boîtiers défaillants.
+                L'objectif de ces tests était d'identifier précisément quel composant était à l'origine du problème rencontré. Cette tâche m'a permis de mettre en pratique mes compétences en programmation
+                tout en contribuant à l'amélioration du processus de dépannage de l'entreprise.<br>
+
+                Cette expérience m'a offert une vision globale du cycle de développement d'un produit électronique, de sa conception à sa mise sur le marché,
+                en passant par les phases de test et de dépannage. J'ai pu ainsi développer mes compétences techniques tout en découvrant le fonctionnement d'une entreprise dans le domaine des systèmes de géolocalisation.<br>
+            </p>
+        </div>
+    </div>
+</section>
 
 
 
 <footer>
 
 </footer>
+<script src="js/index.js"></script>
 </body>
 </html>

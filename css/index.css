@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Poppins Regular, sans-serif;
@@ -5,10 +9,15 @@ body {
     background-color: black;
 }
 
-.main.title {
+.main_title {
     color: #e1e1e1;
     margin-top: 20px;
     font-size: 5em;
+}
+
+.currently {
+    color: #e1e1e1;
+    font-size: 1.5em;
 }
 
 .nav_link_list {
@@ -18,7 +27,14 @@ body {
     margin: 20px auto;
     list-style-type: none;
     display: inline-block;
+
+    position: fixed; /* Rend la liste fixe par rapport à la fenêtre */
+    top: 20px;       /* Garde la liste à 20px du haut de l'écran */
+    left: 50%;       /* Centre la liste horizontalement */
+    transform: translateX(-50%); /* Centre la liste en utilisant la transformation */
+    z-index: 1000;   /* Assure que la liste est au-dessus des autres éléments */
 }
+
 
 .nav_link_list li {
     display: inline;
@@ -27,7 +43,7 @@ body {
 
 .nav_link_list a {
     text-decoration: none;
-    color: #424242;
+    color: #e1e1e1;
     padding: 10px 20px;
     border-radius: 10px;
     background-color: #282828;
@@ -37,3 +53,121 @@ body {
 .nav_link_list a:hover {
     color: #ffffff;
 }
+
+.centered_image {
+    display: block;
+    margin: 3vw auto;
+    max-width: 15%;
+    border-radius: 15px;
+}
+
+.about_me {
+    margin: 20px auto;
+    max-width: 80%;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    text-align: justify;
+    color: #e1e1e1;
+}
+
+.download_cv {
+    color: #e1e1e1;
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.download_cv:hover {
+    color: #3d3df3;
+}
+
+.experience_section {
+    margin: 40px auto;
+    max-width: 80%;
+    background-color: #282828;
+    padding: 20px;
+    margin-top: 6vw;
+    border-radius: 15px;
+}
+
+.experience_title {
+    color: #e1e1e1;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.experience_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience_item {
+    background-color: #383838;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.experience_item h3 {
+    color: #ffffff;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.experience_description {
+    color: #d1d1d1;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    text-align: justify;
+    text-indent: 2vw;
+}
+
+
+
+.large-header {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #333;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+}
+
+#large-header {
+    background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+}
+
+.main-title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #f9f1e9;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+}
+
+.demo-1 .main-title {
+    text-transform: uppercase;
+    font-size: 4.2em;
+    letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+    font-weight: 200;
+}
+
+@media only screen and (max-width : 768px) {
+    .demo-1 .main-title {
+        font-size: 3em;
+    }
+}
+
