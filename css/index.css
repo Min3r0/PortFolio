@@ -30,24 +30,26 @@ body {
     border-radius: 20vw;
     margin: 20px auto;
     list-style-type: none;
-    display: inline-block;
+    display: flex; /* Utilisation de flexbox pour la disposition */
+    justify-content: center; /* Centre les éléments horizontalement */
+    flex-wrap: wrap; /* Permet aux éléments de se placer sur plusieurs lignes si nécessaire */
 
-    position: fixed; /* Rend la liste fixe par rapport à la fenêtre */
-    top: 20px;       /* Garde la liste à 20px du haut de l'écran */
-    left: 50%;       /* Centre la liste horizontalement */
-    transform: translateX(-50%); /* Centre la liste en utilisant la transformation */
-    z-index: 1000;   /* Assure que la liste est au-dessus des autres éléments */
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
 }
 
 
 .nav_link_list li {
     display: inline;
-    margin: 0 10px;
+    margin: 10px;
 }
 
 .nav_link_list a {
     text-decoration: none;
-    color: #e1e1e1;
+    color: #656565;
     padding: 10px 20px;
     border-radius: 10px;
     background-color: #282828;
@@ -185,3 +187,62 @@ body {
     }
 }
 
+@media (max-width: 600px) {
+    .nav_link_list {
+        padding: 4vw 4vh;
+        border-radius: 10vw;
+    }
+
+    .nav_link_list a {
+        padding: 15px 20px; /* Augmente la taille des éléments sur petits écrans */
+    }
+}
+
+.etude_section_global {
+    padding-top: 6vw;
+
+}
+
+.etude_section_container {
+    margin: 40px auto;
+    max-width: 80%;
+    background: linear-gradient(90deg, #000000 0%, #809eff 100%);
+    padding: 3px; /* Ajustez pour l'épaisseur de la "bordure" */
+    border-radius: 20px; /* Plus large que la section intérieure pour compenser l'épaisseur */
+}
+
+.etude_section {
+    background: linear-gradient(66deg, #000000 55%, #4378fc 100%);
+    padding: 20px;
+    border-radius: 20px
+}
+
+.etude_title {
+    color: #e1e1e1;
+    font-size: 5em;
+    margin-bottom: 5vw;
+    text-align: center;
+}
+
+.etude_date  {
+    font-size: 1.5em;
+    color: darkgrey;
+}
+
+.etude{
+    font-size: 2.5em;
+    color: #e1e1e1;
+}
+
+.etude_content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ligne {
+    height: 2px;
+    background: linear-gradient(246deg, #000000 1%, #4378fc 100%);
+    width: 100%; /* Largeur de la ligne */
+    margin: 20px 0; /* Marge autour de la ligne */
+}
