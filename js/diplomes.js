@@ -5,7 +5,7 @@ fetch("txt/diplomes.txt")
     const lignes = data.trim().split("\n");
 
     lignes.forEach((ligne, index) => {
-      const [date, titre] = ligne.split("|").map(s => s.trim());
+      const [date, titre, ecole] = ligne.split("|").map(s => s.trim());
 
       // Création du bloc diplôme
       const article = document.createElement("article");
