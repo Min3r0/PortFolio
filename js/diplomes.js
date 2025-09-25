@@ -13,6 +13,7 @@ fetch("txt/diplomes.txt")
       article.innerHTML = `
         <h3 class="etude_date">${date}</h3>
         <h2 class="etude">${titre}</h2>
+        <h3 class="etude_ecole">${ecole}</p>
       `;
 
       container.appendChild(article);
