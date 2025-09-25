@@ -240,9 +240,15 @@ body {
 
 }
 
-.ligne {
-    height: 2px;
-    background: linear-gradient(246deg, #000000 1%, #4378fc 100%);
-    width: 100%; /* Largeur de la ligne */
-    margin: 20px 0; /* Marge autour de la ligne */
+.etude_ecole {
+    font-size: 1.2em;
+    color: #cfcfcf;   /* un gris clair lisible sur ton fond */
+    font-style: italic;
+    margin-top: 0.3em;
+}
+
+
+.etude_item:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 1.5vw;
 }
