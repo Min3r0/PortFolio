@@ -1,4 +1,4 @@
-fetch('about_me.txt')
+fetch('txt/about_me.txt')
   .then(response => response.text())
   .then(text => {
     // Remplace les sauts de ligne par <br> pour conserver la mise en page
