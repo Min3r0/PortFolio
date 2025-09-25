@@ -1,14 +1,7 @@
-// Charger l'about me
-fetch("text/about_me.txt")
+fetch('about_me.txt')
   .then(response => response.text())
-  .then(data => {
-    const aboutElement = document.getElementById("aboutMe");
-
-    // Séparer les paragraphes si besoin (2 sauts de ligne)
-    const paragraphs = data.split(/\n\s*\n/);
-
-    aboutElement.innerHTML = paragraphs
-      .map(p => `<p>${p}</p>`)
-      .join("");
+  .then(text => {
+    // Remplace les sauts de ligne par <br> pour conserver la mise en page
+    document.getElementById('about_me').innerHTML = text.replace(/\n/g, '<br>');
   })
-  .catch(error => console.error("Erreur de chargement du about me :", error));
+  .catch(error => console.error('Erreur lors du chargement du texte :', error));
