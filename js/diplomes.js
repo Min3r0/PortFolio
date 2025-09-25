@@ -5,15 +5,13 @@ fetch("text/diplomes.txt")
     const lignes = data.trim().split("\n");
 
     lignes.forEach((ligne, index) => {
-      // On sépare en 3 parties
-      const [date, diplome, ecole] = ligne.split("|").map(s => s.trim());
+      const [date, titre] = ligne.split("|").map(s => s.trim());
 
       const article = document.createElement("article");
       article.classList.add("etude_item");
       article.innerHTML = `
         <h3 class="etude_date">${date}</h3>
-        <h2 class="etude">${diplome}</h2>
-        <p class="etude_ecole">${ecole}</p>
+        <h2 class="etude">${titre}</h2>
       `;
 
       container.appendChild(article);
