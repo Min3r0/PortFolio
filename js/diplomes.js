@@ -1,4 +1,4 @@
-fetch("text/diplomes.txt")
+fetch("txt/diplomes.txt")
   .then(response => response.text())
   .then(data => {
     const container = document.getElementById("etudeContent");
@@ -7,6 +7,7 @@ fetch("text/diplomes.txt")
     lignes.forEach((ligne, index) => {
       const [date, titre] = ligne.split("|").map(s => s.trim());
 
+      // Création du bloc diplôme
       const article = document.createElement("article");
       article.classList.add("etude_item");
       article.innerHTML = `
@@ -16,6 +17,7 @@ fetch("text/diplomes.txt")
 
       container.appendChild(article);
 
+      // Ligne de séparation sauf après le dernier
       if (index < lignes.length - 1) {
         const separator = document.createElement("div");
         separator.classList.add("ligne");
