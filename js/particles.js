@@ -1,82 +1,102 @@
-/* ─── PARTICLE GRID BACKGROUND ─────────────────────────── */
+/* ─── WEB SILK — Interactive Mouse Background ───────────── */
 (function () {
-    const canvas = document.getElementById('bg-canvas');
-    const ctx = canvas.getContext('2d');
-    let W, H, particles;
-    const mouse = { x: -9999, y: -9999 };
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes;
+  const mouse = { x: -1, y: -1 };
 
-    const COLS = [
-        'rgba(0,245,255,',
-        'rgba(123,47,255,',
-        'rgba(255,45,120,'
-    ];
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    init();
+  }
 
-    function resize() {
-        W = canvas.width = window.innerWidth;
-        H = canvas.height = window.innerHeight;
-        init();
-    }
+  function init() {
+    const count = Math.min(120, Math.floor((W * H) / 12000));
+    nodes = Array.from({ length: count }, () => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+      hue: 180 + Math.random() * 80
+    }));
+  }
 
-    function init() {
-        particles = [];
-        const count = Math.floor((W * H) / 14000);
-        for (let i = 0; i < count; i++) {
-            particles.push({
-                x: Math.random() * W,
-                y: Math.random() * H,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
-                r: Math.random() * 1.5 + 0.5,
-                col: COLS[Math.floor(Math.random() * COLS.length)]
-            });
-        }
-    }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
 
-    function draw() {
-        ctx.clearRect(0, 0, W, H);
-        particles.forEach((p, i) => {
-            p.x += p.vx;
-            p.y += p.vy;
-            if (p.x < 0) p.x = W;
-            if (p.x > W) p.x = 0;
-            if (p.y < 0) p.y = H;
-            if (p.y > H) p.y = 0;
-
-            const dx = mouse.x - p.x;
-            const dy = mouse.y - p.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            const glow = dist < 200 ? 1 - dist / 200 : 0;
-
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r + glow * 2, 0, Math.PI * 2);
-            ctx.fillStyle = p.col + (0.4 + glow * 0.6) + ')';
-            ctx.fill();
-
-            // Connect nearby particles
-            for (let j = i + 1; j < particles.length; j++) {
-                const q = particles[j];
-                const ex = p.x - q.x;
-                const ey = p.y - q.y;
-                const ed = Math.sqrt(ex * ex + ey * ey);
-                if (ed < 120) {
-                    ctx.beginPath();
-                    ctx.moveTo(p.x, p.y);
-                    ctx.lineTo(q.x, q.y);
-                    ctx.strokeStyle = p.col + (0.08 * (1 - ed / 120)) + ')';
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
-            }
-        });
-        requestAnimationFrame(draw);
-    }
-
-    window.addEventListener('resize', resize);
-    window.addEventListener('mousemove', e => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
+    // Move nodes
+    nodes.forEach(n => {
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
     });
 
-    resize();
-    draw();
+    // Build list including mouse as a virtual node
+    const all = mouse.x >= 0
+      ? [...nodes, { x: mouse.x, y: mouse.y, hue: 195, isMouse: true }]
+      : nodes;
+
+    // Draw connections
+    for (let i = 0; i < all.length; i++) {
+      for (let j = i + 1; j < all.length; j++) {
+        const a = all[i], b = all[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        const isMouse = a.isMouse || b.isMouse;
+        const maxD = isMouse ? 200 : 120;
+
+        if (d < maxD) {
+          const alpha = (1 - d / maxD) * (isMouse ? 0.65 : 0.2);
+          const hue = (a.hue + b.hue) / 2;
+          ctx.strokeStyle = `hsla(${hue}, 100%, 70%, ${alpha})`;
+          ctx.lineWidth = isMouse ? 1.0 : 0.4;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes
+    nodes.forEach(n => {
+      ctx.fillStyle = `hsla(${n.hue}, 100%, 75%, 0.55)`;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, 1.8, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // Draw mouse cursor dot
+    if (mouse.x >= 0) {
+      const grd = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 18);
+      grd.addColorStop(0, 'rgba(0,245,255,0.7)');
+      grd.addColorStop(1, 'transparent');
+      ctx.fillStyle = grd;
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 18, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = 'rgba(0,245,255,1)';
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  window.addEventListener('mousemove', e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+  window.addEventListener('mouseleave', () => {
+    mouse.x = -1;
+    mouse.y = -1;
+  });
+
+  resize();
+  draw();
 })();
