@@ -1,110 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Romain AUGÉ</title>
-    <link rel="stylesheet" href="css/index.css">
-
-    <link rel="icon" href="images/pp.png" type="image/x-icon">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Romain AUGÉ — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/pp.png" type="image/x-icon" />
 </head>
 <body>
-<div id="large-header" class="large-header">
-    <canvas id="demo-canvas"></canvas>
-</div>
-<ul class ="nav_link_list">
-    <li class="about_nav_link">
-        <a href="#About_section" data-scroll>À propos</a>
-    </li>
-    <li class="xp_nav_link">
-        <a href="#experience_section" data-scroll>Expériences</a>
-    </li>
-    <li class="etude_nav_link" data-scroll>
-        <a href="#etudes">Études</a>
-    </li>
-    <li class="contact_nav_link" data-scroll>
-        <a href="#contact">Contact</a>
-    </li>
-</ul>
-<div class="div_main_title" id="About_section">
-    <h1 class="main_title">
-        Romain AUGÉ
+
+<canvas id="bg-canvas"></canvas>
+
+<nav>
+  <a href="#hero">Home</a>
+  <a href="#about">À propos</a>
+  <a href="#experience">Expériences</a>
+  <a href="#diplomes">Diplômes</a>
+  <a href="#competences">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <section id="hero">
+    <span class="hero-badge">Disponible pour alternance / stage</span>
+    <h1 class="hero-name">
+      Romain<br>
+      <span class="line2">AUGÉ</span>
     </h1>
-</div>
-
-<h2 class="currently">
-    Je suis actuellement en 3ème année Data&IA à Toulouse Ynov Campus
-</h2>
-<img src="images/PhotoProfil.jpg" alt="Photo de profil de Romain AUGÉ" class="centered_image">
-
-
-<p class="about_me" id="about_me"></p>
-<p class="about_me"> 
- Vous pouvez retrouver <a href="pdf/Romain_AUGE_CV.pdf" class="download_cv" download>mon CV ici</a>. 
-</p>
-<script src="js/about_me.js"></script>
-
-
-<section class="experience_section_global" id="experience_section">
-    <div class="experience_section_container">
-        <section  class="experience_section">
-            <h2 class="experience_title">Expérience professionnel 2eme année</h2>
-            <div class="experience_content">
-                <div class="experience_item">
-                    <h3>L'Entreprise</h3>
-                    <p class="experience_description">
-                        J'ai effectué mon expérience professionnelle chez Agreenculture à Toulouse. Agreenculture est une entreprise française innovante créée en 2016 et installée à Toulouse. Elle est spécialisée dans les technologies agricoles de précision,
-                        notamment dans la confection de solutions logicielles d'automatisation de machines agricoles sous forme de boîtiers blancs.<br>
-                        L'ambition d'Agreenculture est d'automatiser des tâches agricoles à faible valeur ajoutée, comme le désherbage, tout en révolutionnant les pratiques agricoles.
-                        L'entreprise développe des solutions robotiques autonomes pour l'agriculture, dont son produit phare : le robot agricole autonome Céol.<br>
-                        Agreenculture se distingue par sa technologie de guidage GPS RTK haute précision. Ses solutions offrent de nombreux avantages, tels que la réduction des intrants,
-                        l'optimisation du travail et le respect de l'environnement. L'entreprise cible divers marchés agricoles, notamment les grandes cultures, la viticulture et le maraîchage.<br>
-                        L'innovation est au cœur de l'activité d'Agreenculture, avec une R&D focalisée sur la robotique et l'intelligence artificielle appliquées à l'agriculture. L'objectif est de combiner robotique,
-                        données et expertise agronomique pour une agriculture plus durable et efficiente.<br>
-                    </p>
-                </div>
-                <div class="experience_item">
-                    <h3>L'Experience Professionnel</h3>
-                    <p class="experience_description" >
-                            J'ai effectué mon expérience professionnelle du 27 mars au 5 juillet, durant toutes les après-midi. Mon stage s'est déroulé en deux parties distinctes.<br>
-
-                        En premier lieu, j'ai contribué à la conception de procédures d'assemblage et participé à l'assemblage de boîtiers GPS. J'ai également réalisé des tests afin de valider la mise sur le marché de ces boîtiers.
-                        Malheureusement, je ne peux donner plus de détails sur cette partie en raison d'une clause de confidentialité que j'ai signée.<br>
-
-                        La deuxième partie de mon stage a été consacrée au développement de tests logiciels. J'ai été chargé de coder des programmes de test destinés à être exécutés sur les boîtiers défaillants.
-                        L'objectif de ces tests était d'identifier précisément quel composant était à l'origine du problème rencontré. Cette tâche m'a permis de mettre en pratique mes compétences en programmation
-                        tout en contribuant à l'amélioration du processus de dépannage de l'entreprise.<br>
-
-                        Cette expérience m'a offert une vision globale du cycle de développement d'un produit électronique, de sa conception à sa mise sur le marché,
-                        en passant par les phases de test et de dépannage. J'ai pu ainsi développer mes compétences techniques tout en découvrant le fonctionnement d'une entreprise dans le domaine des systèmes de géolocalisation.<br>
-                    </p>
-                </div>
-            </div>
-        </section>
+    <p class="hero-sub">
+      Mastère Expert en Intelligence Artificielle · Passionné par la data, le machine learning et les systèmes embarqués.
+    </p>
+    <div class="hero-cta">
+      <a href="pdf/Romain_AUGE_CV.pdf" download class="btn btn-primary">↓ Télécharger le CV</a>
+      <a href="#contact" class="btn btn-outline">Me contacter →</a>
     </div>
-</section>
+    <p class="hero-scroll">scroll pour explorer</p>
+  </section>
 
-
-<section class="etude_section_global" id="etudes">
-  <div class="etude_section_container">
-    <section class="etude_section">
-      <h1 class="etude_title">Diplômes</h1>
-      <div class="etude_content" id="etudeContent">
-        <!-- Diplômes injectés par JS -->
+  <section id="about">
+    <span class="section-label reveal">01 / About</span>
+    <h2 class="section-title reveal">Qui suis-je ?</h2>
+    <div class="about-grid reveal">
+      <div class="about-text glass-card">
+        <p>C'est au collège que ma passion pour l'informatique a véritablement pris forme. Les premières lignes de code en mathématiques et technologie ont été les étincelles qui ont allumé mon intérêt — jusqu'à concevoir un robot pour une compétition inter-établissements en 3ème.</p>
+        <p>Après le lycée Déodat de Séverac (BAC S-SI), j'ai poursuivi à la faculté Paul Sabatier puis rejoint Toulouse Ynov Campus pour un Bachelor Développement IA &amp; Data Engineering, et désormais un Mastère Expert en IA.</p>
+        <p>En parallèle, 15 ans aux Scouts et Guides de France — dont 5 en tant que chef — m'ont forgé en matière de leadership, d'autonomie et de gestion d'équipe. Titulaire du BAFA, je suis également passionné par les animaux marins, les jeux vidéo et l'automobile.</p>
       </div>
-    </section>
-  </div>
-</section>
+      <div class="about-stats">
+        <div class="glass-card stat-card">
+          <span class="stat-number">15<span style="font-size:.5em;-webkit-text-fill-color:var(--muted);">ans</span></span>
+          <span class="stat-label">Scouts &amp; Guides de France</span>
+        </div>
+        <div class="glass-card stat-card">
+          <span class="stat-number">3+<span style="font-size:.5em;-webkit-text-fill-color:var(--muted);"> ans</span></span>
+          <span class="stat-label">Formations supérieures en IA &amp; Data</span>
+        </div>
+        <div class="glass-card stat-card">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Curiosité pour les nouvelles technos</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script src="js/diplomes.js"></script>
+  <section id="experience">
+    <span class="section-label reveal">02 / Expériences</span>
+    <h2 class="section-title reveal">Parcours professionnel</h2>
+    <div class="xp-grid">
+      <div class="glass-card xp-card reveal">
+        <div class="xp-header">
+          <div>
+            <div class="xp-company">Agreenculture</div>
+            <div class="xp-role">Stagiaire Développement &amp; Test Logiciel</div>
+          </div>
+          <span class="xp-period">Mars — Juillet 2024</span>
+        </div>
+        <p class="xp-desc">
+          Stage en deux volets au sein de cette start-up toulousaine spécialisée en agriculture de précision (robot autonome Céol, GPS RTK haute précision). Premier volet : conception de procédures d'assemblage et tests de validation pour des boîtiers GPS. Second volet : développement de programmes de diagnostic logiciel permettant d'identifier précisément les composants défaillants, contribuant directement à l'amélioration du processus de dépannage.
+        </p>
+      </div>
+      <div class="glass-card xp-card reveal" style="opacity:.4; border-style:dashed;">
+        <div class="xp-header">
+          <div>
+            <div class="xp-company" style="color:var(--muted);">Prochaine expérience</div>
+            <div class="xp-role" style="color:var(--muted);">À venir…</div>
+          </div>
+        </div>
+        <p class="xp-desc" style="color:var(--muted); font-style:italic;">Cette section sera complétée au fil de votre parcours.</p>
+      </div>
+    </div>
+  </section>
 
+  <section id="diplomes">
+    <span class="section-label reveal">03 / Formation</span>
+    <h2 class="section-title reveal">Diplômes &amp; Études</h2>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="tl-date">2025 — Aujourd'hui</div>
+        <div class="tl-title">Mastère Expert en Intelligence Artificielle</div>
+        <div class="tl-school">Toulouse Ynov Campus</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">2022 — 2025</div>
+        <div class="tl-title">Bachelor Développement IA &amp; Data Engineering</div>
+        <div class="tl-school">Toulouse Ynov Campus</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">2017 — 2020</div>
+        <div class="tl-title">Baccalauréat S — Sciences de l'Ingénieur</div>
+        <div class="tl-school">Lycée Déodat-de-Séverac, Toulouse</div>
+      </div>
+      <div class="timeline-item" style="padding-bottom:0;">
+        <div class="tl-date">2015 — 2017</div>
+        <div class="tl-title">Brevet des collèges</div>
+        <div class="tl-school">Collège Pierre Labitrie</div>
+      </div>
+    </div>
+  </section>
 
+  <section id="competences">
+    <span class="section-label reveal">04 / Skills</span>
+    <h2 class="section-title reveal">Compétences techniques</h2>
+    <div class="skills-grid">
+      <div class="glass-card skill-group reveal">
+        <h4>Langages</h4>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">C</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Bash</span>
+        </div>
+      </div>
+      <div class="glass-card skill-group reveal">
+        <h4>IA &amp; Data</h4>
+        <div class="skill-tags">
+          <span class="tag">TensorFlow</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+        </div>
+      </div>
+      <div class="glass-card skill-group reveal">
+        <h4>Web &amp; Dev</h4>
+        <div class="skill-tags">
+          <span class="tag">HTML / CSS</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Git</span>
+          <span class="tag">Docker</span>
+          <span class="tag">REST API</span>
+        </div>
+      </div>
+      <div class="glass-card skill-group reveal">
+        <h4>Soft Skills</h4>
+        <div class="skill-tags">
+          <span class="tag">Leadership</span>
+          <span class="tag">Travail d'équipe</span>
+          <span class="tag">Autonomie</span>
+          <span class="tag">Pédagogie</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="contact">
+    <span class="section-label reveal">05 / Contact</span>
+    <h2 class="section-title reveal">Travaillons ensemble</h2>
+    <p class="contact-tagline reveal">
+      Vous avez un projet IA, data ou dev ? Je suis ouvert aux opportunités d'alternance et de collaboration.
+    </p>
+    <div class="contact-links reveal">
+      <a href="mailto:ton@email.com" class="contact-link">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Email
+      </a>
+      <a href="https://www.linkedin.com/in/romain-auge" target="_blank" class="contact-link">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/romain-auge" target="_blank" class="contact-link">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+      <a href="pdf/Romain_AUGE_CV.pdf" download class="contact-link">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
+        Télécharger CV
+      </a>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-
+  <p>© 2025 Romain AUGÉ — Conçu &amp; développé avec soin · Toulouse 🇫🇷</p>
 </footer>
-<script src="js/index.js"></script>
+
+<script src="js/particles.js"></script>
+<script src="js/ui.js"></script>
+
 </body>
 </html>
